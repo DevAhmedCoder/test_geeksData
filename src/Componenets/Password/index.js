@@ -33,11 +33,11 @@ const Password = (props) => {
         <div className="container text-center  bg-dark text-white  mt-5 w-50">
             {(error !== null) ? <span>{error.message}</span>:<span>{success}</span>}
 
-            <h4 className="mt-5">Forgot password</h4>
+            <h4 className="mt-5">Password reset</h4>
             <form onSubmit={handelSubmit}>
                 <div className="input-group mb-3">
                     <div className="input-group-prepend">
-                        <label className="input-group-text" htmlFor="email" >Login</label>
+                        <label className="input-group-text" htmlFor="email" >Email</label>
                     </div>
                     <input className="form-control" onChange={e => setemail(e.target.value)} value={email} type="text" autoComplete="off" required />
                 </div>
