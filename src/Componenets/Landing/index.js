@@ -1,6 +1,9 @@
 import React, { useState, useContext, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 import Logout from '../Logout';
 import { FirebaseContext } from '../Firebase';
+import About from './about';
+import Description from './description';
 
 const Landing = (props) => {
 
@@ -12,8 +15,8 @@ const Landing = (props) => {
 
     // Security page
     useEffect(() => {
-        let listener= firebase.auth.onAuthStateChanged(user=>{
-            user?setuserSession(user):props.history.push('/');
+        let listener = firebase.auth.onAuthStateChanged(user => {
+            user ? setuserSession(user) : props.history.push('/');
         })
         return () => {
             listener();
@@ -25,11 +28,20 @@ const Landing = (props) => {
     ) :
         (
             <div>
-                <header>header</header>
-                <Logout />
-                <main>Main</main>
-                <footer>Footer</footer>
-            </div>
+                <nav id="navbar" className=" fixed-top navbar navbar-dark bg-dark d-flex justify-content-around">
+                    <Link className="text-white text-decoration-none" to="/landing/about">About</Link>
+                    <Link className="text-white text-decoration-none" to="/landing/description">Description</Link>
+                    <Logout />
+                </nav>
+
+                <div className="mt-5">
+                    <About />
+                    <Description />
+                </div>
+
+
+
+            </div >
         );
 }
 export default Landing;

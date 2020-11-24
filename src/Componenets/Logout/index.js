@@ -1,5 +1,5 @@
-import React, { useState, useEffect,useContext } from 'react';
-import {FirebaseContext} from '../Firebase';
+import React, { useState, useEffect, useContext } from 'react';
+import { FirebaseContext } from '../Firebase';
 
 const Logout = () => {
 
@@ -11,13 +11,15 @@ const Logout = () => {
 
     // Link with db
     useEffect(() => {
-        (checked)&&firebase.signoutUser(); 
+        (checked) && firebase.signoutUser();
     }, [checked, firebase])
 
     return (
-        <div>
-            <label>Logout</label>
-            <input onChange={(e)=>{setchecked(e.target.checked)}} type="checkbox" checked={checked} />
+        <div  className="btn-group-toggle" data-toggle="buttons">
+            <label className="btn btn-danger active">
+                <input onChange={(e) => { setchecked(e.target.checked) }} type="checkbox" checked={checked} />
+                Logout</label>
+
         </div>
     )
 }

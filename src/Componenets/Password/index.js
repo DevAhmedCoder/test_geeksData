@@ -30,18 +30,23 @@ const Password = (props) => {
     };
 
     return (
-        <div>
+        <div className="container text-center  bg-dark text-white  mt-5 w-50">
             {(error !== null) ? <span>{error.message}</span>:<span>{success}</span>}
 
-            <h2>Forgot password</h2>
+            <h4 className="mt-5">Forgot password</h4>
             <form onSubmit={handelSubmit}>
-                <div className="" >
-                    <label htmlFor="email" >Login</label>
-                    <input onChange={e => setemail(e.target.value)} value={email} type="text" autoComplete="off" required />
+                <div className="input-group mb-3">
+                    <div className="input-group-prepend">
+                        <label className="input-group-text" htmlFor="email" >Login</label>
+                    </div>
+                    <input className="form-control" onChange={e => setemail(e.target.value)} value={email} type="text" autoComplete="off" required />
                 </div>
-                <button disabled={!email} >Send</button>
+                <div>
+                    <Link to='/'>I know my password.</Link>
+                </div>
+                <button className="btn btn-success m-1" disabled={!email} >Send</button>
             </form>
-            <Link to='/'>I know my password.</Link>
+            
         </div>
     )
 }

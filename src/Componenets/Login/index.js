@@ -42,27 +42,32 @@ const Login = (props) => {
     }
 
     return (
-        <div>
+        <div className="container text-center  bg-dark text-white  mt-5 w-50">
 
             {error !== "" && <span>{error.message}</span>}
 
-            <h2>Connexion</h2>
-            <form onSubmit={handelSubmit}>
-                <div className="" >
-                    <label htmlFor="email" >Login</label>
-                    <input onChange={e => setemail(e.target.value)} value={email} type="text" autoComplete="off" required />
+            <h3 className="mt-5">WELCOME TO A.SOUA WEBSITE</h3>
+            <form onSubmit={handelSubmit} className="">
+
+                <div className="input-group mb-3" >
+                    <div className="input-group-prepend">
+                        <label className="input-group-text" htmlFor="email" >Email :</label>
+                    </div>
+                    <input className="form-control" onChange={e => setemail(e.target.value)} value={email} type="text" autoComplete="off" required />
                 </div>
 
-                <div className="" >
-                    <label htmlFor="password" >Password</label>
-                    <input onChange={e => setpassword(e.target.value)} value={password} type="password" autoComplete="off" required />
+                <div className="input-group mb-3" >
+                    <div className="input-group-prepend">
+                        <label className="input-group-text" htmlFor="password" >Password : </label>
+                    </div>
+                    <input className="form-control" onChange={e => setpassword(e.target.value)} value={password} type="password" autoComplete="off" required />
                 </div>
 
                 <div>
-                    <Link to='/password'>I forget my password // my first connexion</Link>
+                    <Link to='/password'>I forget my password or This is my first connexion</Link>
                 </div>
 
-                {btn ? <button>Connexion</button> : <button disabled >Connexion</button>}
+                <button className="btn btn-success m-1" disabled={!btn} >Sign in</button>
             </form>
 
         </div>
