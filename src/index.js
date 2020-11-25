@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import "./index.css";
 import Firebase, { FirebaseContext } from './Componenets/Firebase';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
