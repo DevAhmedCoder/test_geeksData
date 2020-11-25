@@ -1,7 +1,13 @@
-.container-fluid{
-height: 2000px;
-}
 .about{
-    background-image: url("https://probella.com/wp-content/uploads/2018/03/React-JS.png");
-    background-size: cover;
+    color: beige;
+    background: black;
+    text-align: center;
+    margin-top: 100px;
+    padding: 100px;
+    border: 0px;
+}
+.description{
+    color:white;
+    background: black;
+    margin-top: 150px;
 }
