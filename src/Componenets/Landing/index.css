@@ -1,0 +1,7 @@
+.container-fluid{
+height: 2000px;
+}
+.about{
+    background-image: url("https://probella.com/wp-content/uploads/2018/03/React-JS.png");
+    background-size: cover;
+}

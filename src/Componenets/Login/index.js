@@ -42,18 +42,16 @@ const Login = (props) => {
     }
 
     return (
-        <div className="container text-center  bg-dark text-white  mt-5 w-50">
-
-            {error !== "" && <span>{error.message}</span>}
-
-            <h3 className="mt-5">WELCOME TO A.SOUA WEBSITE</h3>
-            <form onSubmit={handelSubmit} className="">
+        <div className="container text-center  bg-dark text-white  mt-5 w-50 ">
+            <h3 className="mt-5 p-2">WELCOME TO A.SOUA WEBSITE</h3>
+            {error !== "" && <span className="text-warning">{error.message}</span>}
+            <form onSubmit={handelSubmit}>
 
                 <div className="input-group mb-3" >
                     <div className="input-group-prepend">
                         <label className="input-group-text" htmlFor="email" >Email :</label>
                     </div>
-                    <input className="form-control" onChange={e => setemail(e.target.value)} value={email} type="text" autoComplete="off" required />
+                    <input className="form-control" onChange={e => {setemail(e.target.value);seterror("");}} value={email} type="text" autoComplete="off" required />
                 </div>
 
                 <div className="input-group mb-3" >
@@ -69,6 +67,8 @@ const Login = (props) => {
 
                 <button className="btn btn-success m-1" disabled={!btn} >Sign in</button>
             </form>
+
+            <p>If your identifier no corresponding, please contact the support [ahmed.soua@outlook.com].</p>
 
         </div>
     )
